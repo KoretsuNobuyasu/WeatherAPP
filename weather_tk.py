@@ -36,16 +36,12 @@ class Application(tk.Frame):
         self.hi_there.pack(side="top")
 
     def quit(self):
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=root.destroy)
+        self.quit = tk.Button(self, text="QUIT", fg="red",command=root.destroy)
         self.quit.pack(side="bottom")
 
     def osaka_weather(self):
         self.location = "Osaka, JP"
         self.setting_location()
-
-
-        return
 
     def setting_location(self):
         # openweathermap.org 　JSON DATA Download from API
@@ -60,19 +56,15 @@ class Application(tk.Frame):
 
     def loading(self):
         # JSON Data to Python variable
-        #self.weather_data = json.loads(self.response.text)
         self.weather_data = json.loads(self.response.text)
         self.show()
-
 
     def show(self):
         w = self.weather_data['list']
         print('{}の現在の天気'.format(self.location))
-        print(w[0]['weather'][0]['main'], '-', w[0]['weather'][0]['description'])
-        print()
+        print(w[0]['weather'][0]['main'], '-', w[0]['weather'][0]['description'], '\n')
         print('明日:')
-        print(w[1]['weather'][0]['main'], '-', w[1]['weather'][0]['description'])
-        print()
+        print(w[1]['weather'][0]['main'], '-', w[1]['weather'][0]['description'], '\n')
         print('明後日:')
         print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
