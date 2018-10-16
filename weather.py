@@ -6,6 +6,7 @@
 
 # import
 import json, requests, sys
+import weather_tk
 
 
 EXIT_SUCCESS = 0
@@ -15,15 +16,18 @@ APPID='a584bd2a6688a2c48c50b3775c6d691b'
 
 def main():
 
+
     if len(sys.argv) < 2:
         print('Usage: weather.py location')
         print('場所を入力してください')
         print('例: Osaka, JP')
         sys.exit()
+
     location = ' '.join(sys.argv[1:])
     # openweathermap.org 　JSON DATA Download from API
     url = 'http://api.openweathermap.org/data/2.5/forecast?q={}&cnt=3&appid={}'.format(location, APPID)
     data = loading(location, get_info(url))
+
 
     # it show weather info about select location
     w = data['list']
