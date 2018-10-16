@@ -18,6 +18,7 @@ def main():
     if len(sys.argv) < 2:
         print('Usage: weather.py location')
         print('場所を入力してください')
+        print('例: Osaka, JP')
         sys.exit()
     location = ' '.join(sys.argv[1:])
     # openweathermap.org 　JSON DATA Download from API
