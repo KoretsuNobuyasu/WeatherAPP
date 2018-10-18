@@ -21,14 +21,14 @@ class Application(tk.Frame):
 
     def create_widgets(self):
         self.hi_there()
-        self.select()
+        self.osaka()
         self.quit()
 
-    def select(self):
-        self.select = tk.Button(self)
-        self.select["text"] = "大阪"
-        self.select["command"] = self.osaka_weather
-        self.select.pack()
+    def osaka(self):
+        self.osaka = tk.Button(self)
+        self.osaka["text"] = "大阪"
+        self.osaka["command"] = self.osaka_weather
+        self.osaka.pack()
 
     def hi_there(self):
         self.hi_there = tk.Label(self)
