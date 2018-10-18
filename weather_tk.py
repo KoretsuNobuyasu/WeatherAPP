@@ -67,7 +67,15 @@ class Application(tk.Frame):
         print(w[1]['weather'][0]['main'], '-', w[1]['weather'][0]['description'], '\n')
         print('明後日:')
         print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
-
+        self.today = tk.Label(self)
+        self.today["text"] = "{}の現在の天気\n{}-{}\n".format(self.location, w[0]['weather'][0]['main'], w[0]['weather'][0]['description'])
+        self.today.pack(side="left")
+        self.tomorrow = tk.Label(self)
+        self.tomorrow["text"] = "{}の明日の天気\n{}-{}\n".format(self.location, w[1]['weather'][0]['main'],w[1]['weather'][0]['description'])
+        self.tomorrow.pack(side="left")
+        self.the_day_after_tomorrow = tk.Label(self)
+        self.the_day_after_tomorrow["text"] = "{}の明後日の天気\n{}-{}\n".format(self.location, w[2]['weather'][0]['main'],w[2]['weather'][0]['description'])
+        self.the_day_after_tomorrow.pack(side="left")
 
 root = tk.Tk()
 root.geometry("500x500")
